@@ -5,9 +5,10 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
-    context_dict= {'boldmessage':'Rango says hey there partner!'}
-    return render(request,'rango/index.html',context=context_dict)
+    html='<a href="/rango/about/">About</a>'
+    return HttpResponse(html+"Rango says hey there partner!")
+
 
 def about(request):
-    context_dict= {'boldmessage':'Rango sayshere is the about pages.'}
-    return render(request,'rango/about.html',context=context_dict)
+    html='<a href="/rango/">Index</a>'
+    return HttpResponse("Rango says here is the about page."+html)
